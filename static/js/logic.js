@@ -22,3 +22,9 @@ d3.json(link).then(function(data) {
   // Creating a GeoJSON layer with the retrieved data
   L.geoJson(data).addTo(myMap);
 });
+
+L.timezones.addTo(myMap);
+
+L.timezones.bindPopup(function (layer) {
+  return layer.feature.properties.time_zone;
+}).addTo(myMap);
